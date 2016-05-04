@@ -1,0 +1,322 @@
+<!DOCTYPE HTML><html><head><title>Amazon S3 Services API documentation</title><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><meta name="generator" content="https://github.com/kevinrenskers/raml2html 2.4.0"><link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.1/styles/default.min.css"><script type="text/javascript" src="https://code.jquery.com/jquery-1.11.0.min.js"></script><script type="text/javascript" src="https://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script><script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.1/highlight.min.js"></script><script type="text/javascript">
+      $(document).ready(function() {
+        $('.page-header pre code, .top-resource-description pre code').each(function(i, block) {
+          hljs.highlightBlock(block);
+        });
+
+        $('[data-toggle]').click(function() {
+          var selector = $(this).data('target') + ' pre code';
+          $(selector).each(function(i, block) {
+            hljs.highlightBlock(block);
+          });
+        });
+
+        // open modal on hashes like #_action_get
+        $(window).bind('hashchange', function(e) {
+          var anchor_id = document.location.hash.substr(1); //strip #
+          var element = $('#' + anchor_id);
+
+          // do we have such element + is it a modal?  --> show it
+          if (element.length && element.hasClass('modal')) {
+            element.modal('show');
+          }
+        });
+
+        // execute hashchange on first page load
+        $(window).trigger('hashchange');
+
+        // remove url fragment on modal hide
+        $('.modal').on('hidden.bs.modal', function() {
+          try {
+            if (history && history.replaceState) {
+                history.replaceState({}, '', '#');
+            }
+          } catch(e) {}
+        });
+      });
+    </script><style>
+      .hljs {
+        background: transparent;
+      }
+      .parent {
+        color: #999;
+      }
+      .list-group-item > .badge {
+        float: none;
+        margin-right: 6px;
+      }
+      .panel-title > .methods {
+        float: right;
+      }
+      .badge {
+        border-radius: 0;
+        text-transform: uppercase;
+        width: 70px;
+        font-weight: normal;
+        color: #f3f3f6;
+        line-height: normal;
+      }
+      .badge_get {
+        background-color: #63a8e2;
+      }
+      .badge_post {
+        background-color: #6cbd7d;
+      }
+      .badge_put {
+        background-color: #22bac4;
+      }
+      .badge_delete {
+        background-color: #d26460;
+      }
+      .badge_patch {
+        background-color: #ccc444;
+      }
+      .list-group, .panel-group {
+        margin-bottom: 0;
+      }
+      .panel-group .panel+.panel-white {
+        margin-top: 0;
+      }
+      .panel-group .panel-white {
+        border-bottom: 1px solid #F5F5F5;
+        border-radius: 0;
+      }
+      .panel-white:last-child {
+        border-bottom-color: white;
+        -webkit-box-shadow: none;
+        box-shadow: none;
+      }
+      .panel-white .panel-heading {
+        background: white;
+      }
+      .tab-pane ul {
+        padding-left: 2em;
+      }
+      .tab-pane h2 {
+        font-size: 1.2em;
+        padding-bottom: 4px;
+        border-bottom: 1px solid #ddd;
+      }
+      .tab-pane h3 {
+        font-size: 1.1em;
+      }
+      .tab-content {
+        border-left: 1px solid #ddd;
+        border-right: 1px solid #ddd;
+        border-bottom: 1px solid #ddd;
+        padding: 10px;
+      }
+      #sidebar {
+        margin-top: 30px;
+        padding-right: 5px;
+        overflow: auto;
+        height: 90%;
+      }
+      .top-resource-description {
+        border-bottom: 1px solid #ddd;
+        background: #fcfcfc;
+        padding: 15px 15px 0 15px;
+        margin: -15px -15px 10px -15px;
+      }
+      .resource-description {
+        border-bottom: 1px solid #fcfcfc;
+        background: #fcfcfc;
+        padding: 15px 15px 0 15px;
+        margin: -15px -15px 10px -15px;
+      }
+      .resource-description p:last-child {
+        margin: 0;
+      }
+      .list-group .badge {
+        float: left;
+      }
+      .method_description {
+        margin-left: 85px;
+      }
+      .method_description p:last-child {
+        margin: 0;
+      }
+      .list-group-item {
+        cursor: pointer;
+      }
+      .list-group-item:hover {
+        background-color: #f5f5f5;
+      }
+    </style></head><body data-spy="scroll" data-target="#sidebar"><div class="container"><div class="row"><div class="col-md-9" role="main"><div class="page-header"><h1>Amazon S3 Services API documentation <small>version 2006-03-01</small></h1><p>https://s3.amazonaws.com/</p><h3 id="Headline"><a href="#Headline">Headline</a></h3><p>Amazon S3 is cloud storage for the Internet. It is designed to make web-scale computing easier for developers. Amazon S3 provides a simple web-services interface that can be used to store and retrieve any amount of data, at any time, from anywhere on the web. It gives any developer access to the same highly scalable, reliable, secure, fast, inexpensive infrastructure that Amazon uses to run its own global network of web sites. The service aims to maximize benefits of scale and to pass those benefits on to developers.</p></div><div class="panel panel-default"><div class="panel-heading"><h3 class="panel-title">GET Service</h3></div><div class="panel-body"><div class="top-resource-description"><p>This is base resource type described common request and response headers and error response codes</p></div><div class="panel-group"><div class="panel panel-white"><div class="panel-heading"><h4 class="panel-title"><a class="collapsed" data-toggle="collapse" href="#panel_"><span class="parent"></span>/</a> <span class="methods"><a href="#_get"><span class="badge badge_get">get</span></a></span></h4></div><div id="panel_" class="panel-collapse collapse"><div class="panel-body"><div class="list-group"><div onclick="window.location.href = '#_get'" class="list-group-item"><span class="badge badge_get">get</span><div class="method_description"><p>This implementation of the GET operation returns a list of all buckets owned by the authenticated sender of the request. To authenticate a request, you must use a valid AWS Access Key ID that is registered with Amazon S3. Anonymous requests cannot list buckets, and you cannot list buckets that you did not create.</p><h2 id="syntax">Syntax</h2><p>GET / HTTP/1.1 Host: s3.amazonaws.com Date: date Region: us-east-1 Authorization: signatureValue</p></div><div class="clearfix"></div></div></div></div></div><div class="modal fade" tabindex="0" id="_get"><div class="modal-dialog"><div class="modal-content"><div class="modal-header"><button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button><h4 class="modal-title" id="myModalLabel"><span class="badge badge_get">get</span> <span class="parent"></span>/</h4></div><div class="modal-body"><div class="alert alert-info"><p>This implementation of the GET operation returns a list of all buckets owned by the authenticated sender of the request. To authenticate a request, you must use a valid AWS Access Key ID that is registered with Amazon S3. Anonymous requests cannot list buckets, and you cannot list buckets that you did not create.</p><h2 id="syntax">Syntax</h2><p>GET / HTTP/1.1 Host: s3.amazonaws.com Date: date Region: us-east-1 Authorization: signatureValue</p></div><ul class="nav nav-tabs"><li class="active"><a href="#_get_request" data-toggle="tab">Request</a></li><li><a href="#_get_response" data-toggle="tab">Response</a></li></ul><div class="tab-content"><div class="tab-pane active" id="_get_request"><h3>Headers</h3><ul><li><strong>Authorization</strong>: <em>required (string)</em><p>The information required for request authentication.</p></li><li><strong>Date</strong>: <em>(string)</em><p>The current date and time according to the requester. Example: Wed, 01 Mar 2006 12:00:00 GMT. When you specify the Authorization header, you must specify either the x-amz-date or the Date header</p></li><li><strong>x-amz-date</strong>: <em>(string)</em><p>The current date and time according to the requester. Example: Wed, 01 Mar 2006 12:00:00 GMT. When you specify the Authorization header, you must specify either the x-amz-date or the Date header. If you specify both, the value specified for the x-amz-date header takes precedence.</p></li><li><strong>Content-Type</strong>: <em>(string)</em><p>The content type of the resource in case the request content in the body. Example: text/plain</p></li><li><strong>Expect</strong>: <em>(one of 100-continue)</em><p>When your application uses 100-continue, it does not send the request body until it receives an acknowledgment. If the message is rejected based on the headers, the body of the message is not sent. This header can be used only if you are sending a body.</p></li><li><strong>Host</strong>: <em>(string)</em><p>For path-style requests, the value is s3.amazonaws.com. For virtual-style requests, the value is BucketName.s3.amazonaws.com. This header is required for HTTP 1.1 (most toolkits add this header automatically); optional for HTTP/1.0 requests.</p></li><li><strong>x-amz-security-token</strong>: <em>(string)</em><p>This header can be used in the following scenarios:</p><ul><li>Provide security tokens for Amazon DevPay operations. Each request that uses Amazon DevPay requires two x-amz-security-token headers: one for the product token and one for the user token. When Amazon S3 receives an authenticated request, it compares the computed signature with the provided signature. Improperly formatted multi-value headers used to calculate a signature can cause authentication issues</li><li>Provide security token when using temporary security credentials. When making requests using temporary security credentials you obtained from IAM you must provide a security token using this header. This header is required for requests that use Amazon DevPay and requests that are signed using temporary security credentials.</li></ul></li></ul><h3>Body</h3><p><strong>Type: application/xml</strong></p><p><strong>Schema</strong>:</p><pre><code>&lt;xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://doc.s3.amazonaws.com/2006-03-01" xmlns:xs="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;xs:element name="ListAllMyBucketsResult"&gt;
+    &lt;xs:complexType&gt;
+      &lt;xs:sequence&gt;
+        &lt;xs:element name="Owner"&gt;
+          &lt;xs:complexType&gt;
+            &lt;xs:sequence&gt;
+              &lt;xs:element type="xs:string" name="ID"/&gt;
+              &lt;xs:element type="xs:string" name="DisplayName"/&gt;
+            &lt;/xs:sequence&gt;
+          &lt;/xs:complexType&gt;
+        &lt;/xs:element&gt;
+        &lt;xs:element name="Buckets"&gt;
+          &lt;xs:complexType&gt;
+            &lt;xs:sequence&gt;
+              &lt;xs:element name="Bucket" maxOccurs="unbounded" minOccurs="0"&gt;
+                &lt;xs:complexType&gt;
+                  &lt;xs:sequence&gt;
+                    &lt;xs:element type="xs:string" name="Name"/&gt;
+                    &lt;xs:element type="xs:dateTime" name="CreationDate"/&gt;
+                  &lt;/xs:sequence&gt;
+                &lt;/xs:complexType&gt;
+              &lt;/xs:element&gt;
+            &lt;/xs:sequence&gt;
+          &lt;/xs:complexType&gt;
+        &lt;/xs:element&gt;
+      &lt;/xs:sequence&gt;
+    &lt;/xs:complexType&gt;
+  &lt;/xs:element&gt;
+&lt;/xs:schema&gt;</code></pre><p><strong>Example</strong>:</p><pre><code>&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;ListAllMyBucketsResult xmlns="http://doc.s3.amazonaws.com/2006-03-01"&gt;
+  &lt;Owner&gt;
+    &lt;ID&gt;bcaf1ffd86f461ca5fb16fd081034f&lt;/ID&gt;
+    &lt;DisplayName&gt;webfile&lt;/DisplayName&gt;
+  &lt;/Owner&gt;
+  &lt;Buckets&gt;
+    &lt;Bucket&gt;
+      &lt;Name&gt;quotes&lt;/Name&gt;
+      &lt;CreationDate&gt;2006-02-03T16:45:09.000Z&lt;/CreationDate&gt;
+    &lt;/Bucket&gt;
+    &lt;Bucket&gt;
+      &lt;Name&gt;samples&lt;/Name&gt;
+      &lt;CreationDate&gt;2006-02-03T16:41:58.000Z&lt;/CreationDate&gt;
+    &lt;/Bucket&gt;
+  &lt;/Buckets&gt;
+&lt;/ListAllMyBucketsResult&gt;</code></pre></div><div class="tab-pane" id="_get_response"><h2>HTTP status code <a href="http://httpstatus.es/200" target="_blank">200</a></h2><h3>Headers</h3><ul><li><strong>Content-Length</strong>: <em>(string)</em><p>The length in bytes of the body in the response.</p></li><li><strong>Connection</strong>: <em>(one of open, close)</em><p>specifies whether the connection to the server is open or closed.</p></li><li><strong>Date</strong>: <em>(string)</em><p>The date and time Amazon S3 responded, for example, Wed, 01 Mar 2009 12:00:00 GMT.</p></li><li><strong>ETag</strong>: <em>(string)</em><p>The entity tag is a hash of the object. The ETag only reflects changes to the contents of an object, not its metadata. The ETag is determined when an object is created. For objects created by the PUT Object operation and the POST Object operation, the ETag is a quoted, 32-digit hexadecimal string representing the MD5 digest of the object data. For other objects, the ETag may or may not be an MD5 digest of the object data. If the ETag is not an MD5 digest of the object data, it will contain one or more non-hexadecimal characters and/or will consis of less than 32 or more than 32 hexadecimal digits.</p></li><li><strong>Server</strong>: <em>(string - default: AmazonS3)</em><p>The name of the server that created the response</p></li><li><strong>x-amz-delete-marker</strong>: <em>(boolean)</em><p>Specifies whether the object returned was (true) or was not (false) a Delete Marker.</p></li><li><strong>x-amz-id-2</strong>: <em>(string)</em><p>A special token that helps AWS troubleshoot problems.</p></li><li><strong>x-amz-request-id</strong>: <em>(string)</em><p>A value created by Amazon S3 that uniquely identifies the request. In the unlikely event that you have problems with Amazon S3, AWS can use this value to troubleshoot the problem.</p></li><li><strong>x-amz-version-id</strong>: <em>(string)</em><p>The version of the object. When you enable versioning, Amazon S3 generates a random number for objects added to a bucket. The value is UTF-8 encoded and URL ready. When you PUT an object in a bucket where versioning has been suspended, the version ID is always null.</p></li></ul><h2>HTTP status code <a href="http://httpstatus.es/204" target="_blank">204</a></h2><h3>Headers</h3><ul><li><strong>Content-Length</strong>: <em>(string)</em><p>The length in bytes of the body in the response.</p></li><li><strong>Connection</strong>: <em>(one of open, close)</em><p>specifies whether the connection to the server is open or closed.</p></li><li><strong>Date</strong>: <em>(string)</em><p>The date and time Amazon S3 responded, for example, Wed, 01 Mar 2009 12:00:00 GMT.</p></li><li><strong>ETag</strong>: <em>(string)</em><p>The entity tag is a hash of the object. The ETag only reflects changes to the contents of an object, not its metadata. The ETag is determined when an object is created. For objects created by the PUT Object operation and the POST Object operation, the ETag is a quoted, 32-digit hexadecimal string representing the MD5 digest of the object data. For other objects, the ETag may or may not be an MD5 digest of the object data. If the ETag is not an MD5 digest of the object data, it will contain one or more non-hexadecimal characters and/or will consis of less than 32 or more than 32 hexadecimal digits.</p></li><li><strong>Server</strong>: <em>(string - default: AmazonS3)</em><p>The name of the server that created the response</p></li><li><strong>x-amz-delete-marker</strong>: <em>(boolean)</em><p>Specifies whether the object returned was (true) or was not (false) a Delete Marker.</p></li><li><strong>x-amz-id-2</strong>: <em>(string)</em><p>A special token that helps AWS troubleshoot problems.</p></li><li><strong>x-amz-request-id</strong>: <em>(string)</em><p>A value created by Amazon S3 that uniquely identifies the request. In the unlikely event that you have problems with Amazon S3, AWS can use this value to troubleshoot the problem.</p></li><li><strong>x-amz-version-id</strong>: <em>(string)</em><p>The version of the object. When you enable versioning, Amazon S3 generates a random number for objects added to a bucket. The value is UTF-8 encoded and URL ready. When you PUT an object in a bucket where versioning has been suspended, the version ID is always null.</p></li></ul><h2>HTTP status code <a href="http://httpstatus.es/301" target="_blank">301</a></h2><p>Moved Permanently, see error code on <a href="http://docs.aws.amazon.com/AmazonS3/latest/API/ErrorResponses.html">http://docs.aws.amazon.com/AmazonS3/latest/API/ErrorResponses.html</a></p><h3>Headers</h3><ul><li><strong>Content-Length</strong>: <em>(string)</em><p>The length in bytes of the body in the response.</p></li><li><strong>Connection</strong>: <em>(one of open, close)</em><p>specifies whether the connection to the server is open or closed.</p></li><li><strong>Date</strong>: <em>(string)</em><p>The date and time Amazon S3 responded, for example, Wed, 01 Mar 2009 12:00:00 GMT.</p></li><li><strong>ETag</strong>: <em>(string)</em><p>The entity tag is a hash of the object. The ETag only reflects changes to the contents of an object, not its metadata. The ETag is determined when an object is created. For objects created by the PUT Object operation and the POST Object operation, the ETag is a quoted, 32-digit hexadecimal string representing the MD5 digest of the object data. For other objects, the ETag may or may not be an MD5 digest of the object data. If the ETag is not an MD5 digest of the object data, it will contain one or more non-hexadecimal characters and/or will consis of less than 32 or more than 32 hexadecimal digits.</p></li><li><strong>Server</strong>: <em>(string - default: AmazonS3)</em><p>The name of the server that created the response</p></li><li><strong>x-amz-delete-marker</strong>: <em>(boolean)</em><p>Specifies whether the object returned was (true) or was not (false) a Delete Marker.</p></li><li><strong>x-amz-id-2</strong>: <em>(string)</em><p>A special token that helps AWS troubleshoot problems.</p></li><li><strong>x-amz-request-id</strong>: <em>(string)</em><p>A value created by Amazon S3 that uniquely identifies the request. In the unlikely event that you have problems with Amazon S3, AWS can use this value to troubleshoot the problem.</p></li><li><strong>x-amz-version-id</strong>: <em>(string)</em><p>The version of the object. When you enable versioning, Amazon S3 generates a random number for objects added to a bucket. The value is UTF-8 encoded and URL ready. When you PUT an object in a bucket where versioning has been suspended, the version ID is always null.</p></li></ul><h3>Body</h3><p><strong>Type: application/xml</strong></p><p><strong>Schema</strong>:</p><pre><code>&lt;xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;xs:element name="Error"&gt;
+    &lt;xs:complexType&gt;
+      &lt;xs:sequence&gt;
+        &lt;xs:element type="xs:string" name="Code"/&gt;
+        &lt;xs:element type="xs:string" name="Message"/&gt;
+        &lt;xs:element type="xs:string" name="Resource"/&gt;
+        &lt;xs:element type="xs:string" name="RequestId"/&gt;
+      &lt;/xs:sequence&gt;
+    &lt;/xs:complexType&gt;
+  &lt;/xs:element&gt;
+&lt;/xs:schema&gt;</code></pre><h2>HTTP status code <a href="http://httpstatus.es/307" target="_blank">307</a></h2><p>Moved Temporarily, see error code on <a href="http://docs.aws.amazon.com/AmazonS3/latest/API/ErrorResponses.html">http://docs.aws.amazon.com/AmazonS3/latest/API/ErrorResponses.html</a></p><h3>Headers</h3><ul><li><strong>Content-Length</strong>: <em>(string)</em><p>The length in bytes of the body in the response.</p></li><li><strong>Connection</strong>: <em>(one of open, close)</em><p>specifies whether the connection to the server is open or closed.</p></li><li><strong>Date</strong>: <em>(string)</em><p>The date and time Amazon S3 responded, for example, Wed, 01 Mar 2009 12:00:00 GMT.</p></li><li><strong>ETag</strong>: <em>(string)</em><p>The entity tag is a hash of the object. The ETag only reflects changes to the contents of an object, not its metadata. The ETag is determined when an object is created. For objects created by the PUT Object operation and the POST Object operation, the ETag is a quoted, 32-digit hexadecimal string representing the MD5 digest of the object data. For other objects, the ETag may or may not be an MD5 digest of the object data. If the ETag is not an MD5 digest of the object data, it will contain one or more non-hexadecimal characters and/or will consis of less than 32 or more than 32 hexadecimal digits.</p></li><li><strong>Server</strong>: <em>(string - default: AmazonS3)</em><p>The name of the server that created the response</p></li><li><strong>x-amz-delete-marker</strong>: <em>(boolean)</em><p>Specifies whether the object returned was (true) or was not (false) a Delete Marker.</p></li><li><strong>x-amz-id-2</strong>: <em>(string)</em><p>A special token that helps AWS troubleshoot problems.</p></li><li><strong>x-amz-request-id</strong>: <em>(string)</em><p>A value created by Amazon S3 that uniquely identifies the request. In the unlikely event that you have problems with Amazon S3, AWS can use this value to troubleshoot the problem.</p></li><li><strong>x-amz-version-id</strong>: <em>(string)</em><p>The version of the object. When you enable versioning, Amazon S3 generates a random number for objects added to a bucket. The value is UTF-8 encoded and URL ready. When you PUT an object in a bucket where versioning has been suspended, the version ID is always null.</p></li></ul><h3>Body</h3><p><strong>Type: application/xml</strong></p><p><strong>Schema</strong>:</p><pre><code>&lt;xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;xs:element name="Error"&gt;
+    &lt;xs:complexType&gt;
+      &lt;xs:sequence&gt;
+        &lt;xs:element type="xs:string" name="Code"/&gt;
+        &lt;xs:element type="xs:string" name="Message"/&gt;
+        &lt;xs:element type="xs:string" name="Resource"/&gt;
+        &lt;xs:element type="xs:string" name="RequestId"/&gt;
+      &lt;/xs:sequence&gt;
+    &lt;/xs:complexType&gt;
+  &lt;/xs:element&gt;
+&lt;/xs:schema&gt;</code></pre><h2>HTTP status code <a href="http://httpstatus.es/400" target="_blank">400</a></h2><p>Bad Request, see error code on <a href="http://docs.aws.amazon.com/AmazonS3/latest/API/ErrorResponses.html">http://docs.aws.amazon.com/AmazonS3/latest/API/ErrorResponses.html</a></p><h3>Headers</h3><ul><li><strong>Content-Length</strong>: <em>(string)</em><p>The length in bytes of the body in the response.</p></li><li><strong>Connection</strong>: <em>(one of open, close)</em><p>specifies whether the connection to the server is open or closed.</p></li><li><strong>Date</strong>: <em>(string)</em><p>The date and time Amazon S3 responded, for example, Wed, 01 Mar 2009 12:00:00 GMT.</p></li><li><strong>ETag</strong>: <em>(string)</em><p>The entity tag is a hash of the object. The ETag only reflects changes to the contents of an object, not its metadata. The ETag is determined when an object is created. For objects created by the PUT Object operation and the POST Object operation, the ETag is a quoted, 32-digit hexadecimal string representing the MD5 digest of the object data. For other objects, the ETag may or may not be an MD5 digest of the object data. If the ETag is not an MD5 digest of the object data, it will contain one or more non-hexadecimal characters and/or will consis of less than 32 or more than 32 hexadecimal digits.</p></li><li><strong>Server</strong>: <em>(string - default: AmazonS3)</em><p>The name of the server that created the response</p></li><li><strong>x-amz-delete-marker</strong>: <em>(boolean)</em><p>Specifies whether the object returned was (true) or was not (false) a Delete Marker.</p></li><li><strong>x-amz-id-2</strong>: <em>(string)</em><p>A special token that helps AWS troubleshoot problems.</p></li><li><strong>x-amz-request-id</strong>: <em>(string)</em><p>A value created by Amazon S3 that uniquely identifies the request. In the unlikely event that you have problems with Amazon S3, AWS can use this value to troubleshoot the problem.</p></li><li><strong>x-amz-version-id</strong>: <em>(string)</em><p>The version of the object. When you enable versioning, Amazon S3 generates a random number for objects added to a bucket. The value is UTF-8 encoded and URL ready. When you PUT an object in a bucket where versioning has been suspended, the version ID is always null.</p></li></ul><h3>Body</h3><p><strong>Type: application/xml</strong></p><p><strong>Schema</strong>:</p><pre><code>&lt;xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;xs:element name="Error"&gt;
+    &lt;xs:complexType&gt;
+      &lt;xs:sequence&gt;
+        &lt;xs:element type="xs:string" name="Code"/&gt;
+        &lt;xs:element type="xs:string" name="Message"/&gt;
+        &lt;xs:element type="xs:string" name="Resource"/&gt;
+        &lt;xs:element type="xs:string" name="RequestId"/&gt;
+      &lt;/xs:sequence&gt;
+    &lt;/xs:complexType&gt;
+  &lt;/xs:element&gt;
+&lt;/xs:schema&gt;</code></pre><h2>HTTP status code <a href="http://httpstatus.es/403" target="_blank">403</a></h2><p>Forbidden, see error code on <a href="http://docs.aws.amazon.com/AmazonS3/latest/API/ErrorResponses.html">http://docs.aws.amazon.com/AmazonS3/latest/API/ErrorResponses.html</a></p><h3>Headers</h3><ul><li><strong>Content-Length</strong>: <em>(string)</em><p>The length in bytes of the body in the response.</p></li><li><strong>Connection</strong>: <em>(one of open, close)</em><p>specifies whether the connection to the server is open or closed.</p></li><li><strong>Date</strong>: <em>(string)</em><p>The date and time Amazon S3 responded, for example, Wed, 01 Mar 2009 12:00:00 GMT.</p></li><li><strong>ETag</strong>: <em>(string)</em><p>The entity tag is a hash of the object. The ETag only reflects changes to the contents of an object, not its metadata. The ETag is determined when an object is created. For objects created by the PUT Object operation and the POST Object operation, the ETag is a quoted, 32-digit hexadecimal string representing the MD5 digest of the object data. For other objects, the ETag may or may not be an MD5 digest of the object data. If the ETag is not an MD5 digest of the object data, it will contain one or more non-hexadecimal characters and/or will consis of less than 32 or more than 32 hexadecimal digits.</p></li><li><strong>Server</strong>: <em>(string - default: AmazonS3)</em><p>The name of the server that created the response</p></li><li><strong>x-amz-delete-marker</strong>: <em>(boolean)</em><p>Specifies whether the object returned was (true) or was not (false) a Delete Marker.</p></li><li><strong>x-amz-id-2</strong>: <em>(string)</em><p>A special token that helps AWS troubleshoot problems.</p></li><li><strong>x-amz-request-id</strong>: <em>(string)</em><p>A value created by Amazon S3 that uniquely identifies the request. In the unlikely event that you have problems with Amazon S3, AWS can use this value to troubleshoot the problem.</p></li><li><strong>x-amz-version-id</strong>: <em>(string)</em><p>The version of the object. When you enable versioning, Amazon S3 generates a random number for objects added to a bucket. The value is UTF-8 encoded and URL ready. When you PUT an object in a bucket where versioning has been suspended, the version ID is always null.</p></li></ul><h3>Body</h3><p><strong>Type: application/xml</strong></p><p><strong>Schema</strong>:</p><pre><code>&lt;xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;xs:element name="Error"&gt;
+    &lt;xs:complexType&gt;
+      &lt;xs:sequence&gt;
+        &lt;xs:element type="xs:string" name="Code"/&gt;
+        &lt;xs:element type="xs:string" name="Message"/&gt;
+        &lt;xs:element type="xs:string" name="Resource"/&gt;
+        &lt;xs:element type="xs:string" name="RequestId"/&gt;
+      &lt;/xs:sequence&gt;
+    &lt;/xs:complexType&gt;
+  &lt;/xs:element&gt;
+&lt;/xs:schema&gt;</code></pre><h2>HTTP status code <a href="http://httpstatus.es/404" target="_blank">404</a></h2><p>Not Found, see error code on <a href="http://docs.aws.amazon.com/AmazonS3/latest/API/ErrorResponses.html">http://docs.aws.amazon.com/AmazonS3/latest/API/ErrorResponses.html</a></p><h3>Headers</h3><ul><li><strong>Content-Length</strong>: <em>(string)</em><p>The length in bytes of the body in the response.</p></li><li><strong>Connection</strong>: <em>(one of open, close)</em><p>specifies whether the connection to the server is open or closed.</p></li><li><strong>Date</strong>: <em>(string)</em><p>The date and time Amazon S3 responded, for example, Wed, 01 Mar 2009 12:00:00 GMT.</p></li><li><strong>ETag</strong>: <em>(string)</em><p>The entity tag is a hash of the object. The ETag only reflects changes to the contents of an object, not its metadata. The ETag is determined when an object is created. For objects created by the PUT Object operation and the POST Object operation, the ETag is a quoted, 32-digit hexadecimal string representing the MD5 digest of the object data. For other objects, the ETag may or may not be an MD5 digest of the object data. If the ETag is not an MD5 digest of the object data, it will contain one or more non-hexadecimal characters and/or will consis of less than 32 or more than 32 hexadecimal digits.</p></li><li><strong>Server</strong>: <em>(string - default: AmazonS3)</em><p>The name of the server that created the response</p></li><li><strong>x-amz-delete-marker</strong>: <em>(boolean)</em><p>Specifies whether the object returned was (true) or was not (false) a Delete Marker.</p></li><li><strong>x-amz-id-2</strong>: <em>(string)</em><p>A special token that helps AWS troubleshoot problems.</p></li><li><strong>x-amz-request-id</strong>: <em>(string)</em><p>A value created by Amazon S3 that uniquely identifies the request. In the unlikely event that you have problems with Amazon S3, AWS can use this value to troubleshoot the problem.</p></li><li><strong>x-amz-version-id</strong>: <em>(string)</em><p>The version of the object. When you enable versioning, Amazon S3 generates a random number for objects added to a bucket. The value is UTF-8 encoded and URL ready. When you PUT an object in a bucket where versioning has been suspended, the version ID is always null.</p></li></ul><h3>Body</h3><p><strong>Type: application/xml</strong></p><p><strong>Schema</strong>:</p><pre><code>&lt;xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;xs:element name="Error"&gt;
+    &lt;xs:complexType&gt;
+      &lt;xs:sequence&gt;
+        &lt;xs:element type="xs:string" name="Code"/&gt;
+        &lt;xs:element type="xs:string" name="Message"/&gt;
+        &lt;xs:element type="xs:string" name="Resource"/&gt;
+        &lt;xs:element type="xs:string" name="RequestId"/&gt;
+      &lt;/xs:sequence&gt;
+    &lt;/xs:complexType&gt;
+  &lt;/xs:element&gt;
+&lt;/xs:schema&gt;</code></pre><h2>HTTP status code <a href="http://httpstatus.es/405" target="_blank">405</a></h2><p>Method Not Allowed, see error code on <a href="http://docs.aws.amazon.com/AmazonS3/latest/API/ErrorResponses.html">http://docs.aws.amazon.com/AmazonS3/latest/API/ErrorResponses.html</a></p><h3>Headers</h3><ul><li><strong>Content-Length</strong>: <em>(string)</em><p>The length in bytes of the body in the response.</p></li><li><strong>Connection</strong>: <em>(one of open, close)</em><p>specifies whether the connection to the server is open or closed.</p></li><li><strong>Date</strong>: <em>(string)</em><p>The date and time Amazon S3 responded, for example, Wed, 01 Mar 2009 12:00:00 GMT.</p></li><li><strong>ETag</strong>: <em>(string)</em><p>The entity tag is a hash of the object. The ETag only reflects changes to the contents of an object, not its metadata. The ETag is determined when an object is created. For objects created by the PUT Object operation and the POST Object operation, the ETag is a quoted, 32-digit hexadecimal string representing the MD5 digest of the object data. For other objects, the ETag may or may not be an MD5 digest of the object data. If the ETag is not an MD5 digest of the object data, it will contain one or more non-hexadecimal characters and/or will consis of less than 32 or more than 32 hexadecimal digits.</p></li><li><strong>Server</strong>: <em>(string - default: AmazonS3)</em><p>The name of the server that created the response</p></li><li><strong>x-amz-delete-marker</strong>: <em>(boolean)</em><p>Specifies whether the object returned was (true) or was not (false) a Delete Marker.</p></li><li><strong>x-amz-id-2</strong>: <em>(string)</em><p>A special token that helps AWS troubleshoot problems.</p></li><li><strong>x-amz-request-id</strong>: <em>(string)</em><p>A value created by Amazon S3 that uniquely identifies the request. In the unlikely event that you have problems with Amazon S3, AWS can use this value to troubleshoot the problem.</p></li><li><strong>x-amz-version-id</strong>: <em>(string)</em><p>The version of the object. When you enable versioning, Amazon S3 generates a random number for objects added to a bucket. The value is UTF-8 encoded and URL ready. When you PUT an object in a bucket where versioning has been suspended, the version ID is always null.</p></li></ul><h3>Body</h3><p><strong>Type: application/xml</strong></p><p><strong>Schema</strong>:</p><pre><code>&lt;xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;xs:element name="Error"&gt;
+    &lt;xs:complexType&gt;
+      &lt;xs:sequence&gt;
+        &lt;xs:element type="xs:string" name="Code"/&gt;
+        &lt;xs:element type="xs:string" name="Message"/&gt;
+        &lt;xs:element type="xs:string" name="Resource"/&gt;
+        &lt;xs:element type="xs:string" name="RequestId"/&gt;
+      &lt;/xs:sequence&gt;
+    &lt;/xs:complexType&gt;
+  &lt;/xs:element&gt;
+&lt;/xs:schema&gt;</code></pre><h2>HTTP status code <a href="http://httpstatus.es/409" target="_blank">409</a></h2><p>Conflict, see error code on <a href="http://docs.aws.amazon.com/AmazonS3/latest/API/ErrorResponses.html">http://docs.aws.amazon.com/AmazonS3/latest/API/ErrorResponses.html</a></p><h3>Headers</h3><ul><li><strong>Content-Length</strong>: <em>(string)</em><p>The length in bytes of the body in the response.</p></li><li><strong>Connection</strong>: <em>(one of open, close)</em><p>specifies whether the connection to the server is open or closed.</p></li><li><strong>Date</strong>: <em>(string)</em><p>The date and time Amazon S3 responded, for example, Wed, 01 Mar 2009 12:00:00 GMT.</p></li><li><strong>ETag</strong>: <em>(string)</em><p>The entity tag is a hash of the object. The ETag only reflects changes to the contents of an object, not its metadata. The ETag is determined when an object is created. For objects created by the PUT Object operation and the POST Object operation, the ETag is a quoted, 32-digit hexadecimal string representing the MD5 digest of the object data. For other objects, the ETag may or may not be an MD5 digest of the object data. If the ETag is not an MD5 digest of the object data, it will contain one or more non-hexadecimal characters and/or will consis of less than 32 or more than 32 hexadecimal digits.</p></li><li><strong>Server</strong>: <em>(string - default: AmazonS3)</em><p>The name of the server that created the response</p></li><li><strong>x-amz-delete-marker</strong>: <em>(boolean)</em><p>Specifies whether the object returned was (true) or was not (false) a Delete Marker.</p></li><li><strong>x-amz-id-2</strong>: <em>(string)</em><p>A special token that helps AWS troubleshoot problems.</p></li><li><strong>x-amz-request-id</strong>: <em>(string)</em><p>A value created by Amazon S3 that uniquely identifies the request. In the unlikely event that you have problems with Amazon S3, AWS can use this value to troubleshoot the problem.</p></li><li><strong>x-amz-version-id</strong>: <em>(string)</em><p>The version of the object. When you enable versioning, Amazon S3 generates a random number for objects added to a bucket. The value is UTF-8 encoded and URL ready. When you PUT an object in a bucket where versioning has been suspended, the version ID is always null.</p></li></ul><h3>Body</h3><p><strong>Type: application/xml</strong></p><p><strong>Schema</strong>:</p><pre><code>&lt;xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;xs:element name="Error"&gt;
+    &lt;xs:complexType&gt;
+      &lt;xs:sequence&gt;
+        &lt;xs:element type="xs:string" name="Code"/&gt;
+        &lt;xs:element type="xs:string" name="Message"/&gt;
+        &lt;xs:element type="xs:string" name="Resource"/&gt;
+        &lt;xs:element type="xs:string" name="RequestId"/&gt;
+      &lt;/xs:sequence&gt;
+    &lt;/xs:complexType&gt;
+  &lt;/xs:element&gt;
+&lt;/xs:schema&gt;</code></pre><h2>HTTP status code <a href="http://httpstatus.es/411" target="_blank">411</a></h2><p>Length Required, see error code on <a href="http://docs.aws.amazon.com/AmazonS3/latest/API/ErrorResponses.html">http://docs.aws.amazon.com/AmazonS3/latest/API/ErrorResponses.html</a></p><h3>Headers</h3><ul><li><strong>Content-Length</strong>: <em>(string)</em><p>The length in bytes of the body in the response.</p></li><li><strong>Connection</strong>: <em>(one of open, close)</em><p>specifies whether the connection to the server is open or closed.</p></li><li><strong>Date</strong>: <em>(string)</em><p>The date and time Amazon S3 responded, for example, Wed, 01 Mar 2009 12:00:00 GMT.</p></li><li><strong>ETag</strong>: <em>(string)</em><p>The entity tag is a hash of the object. The ETag only reflects changes to the contents of an object, not its metadata. The ETag is determined when an object is created. For objects created by the PUT Object operation and the POST Object operation, the ETag is a quoted, 32-digit hexadecimal string representing the MD5 digest of the object data. For other objects, the ETag may or may not be an MD5 digest of the object data. If the ETag is not an MD5 digest of the object data, it will contain one or more non-hexadecimal characters and/or will consis of less than 32 or more than 32 hexadecimal digits.</p></li><li><strong>Server</strong>: <em>(string - default: AmazonS3)</em><p>The name of the server that created the response</p></li><li><strong>x-amz-delete-marker</strong>: <em>(boolean)</em><p>Specifies whether the object returned was (true) or was not (false) a Delete Marker.</p></li><li><strong>x-amz-id-2</strong>: <em>(string)</em><p>A special token that helps AWS troubleshoot problems.</p></li><li><strong>x-amz-request-id</strong>: <em>(string)</em><p>A value created by Amazon S3 that uniquely identifies the request. In the unlikely event that you have problems with Amazon S3, AWS can use this value to troubleshoot the problem.</p></li><li><strong>x-amz-version-id</strong>: <em>(string)</em><p>The version of the object. When you enable versioning, Amazon S3 generates a random number for objects added to a bucket. The value is UTF-8 encoded and URL ready. When you PUT an object in a bucket where versioning has been suspended, the version ID is always null.</p></li></ul><h3>Body</h3><p><strong>Type: application/xml</strong></p><p><strong>Schema</strong>:</p><pre><code>&lt;xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;xs:element name="Error"&gt;
+    &lt;xs:complexType&gt;
+      &lt;xs:sequence&gt;
+        &lt;xs:element type="xs:string" name="Code"/&gt;
+        &lt;xs:element type="xs:string" name="Message"/&gt;
+        &lt;xs:element type="xs:string" name="Resource"/&gt;
+        &lt;xs:element type="xs:string" name="RequestId"/&gt;
+      &lt;/xs:sequence&gt;
+    &lt;/xs:complexType&gt;
+  &lt;/xs:element&gt;
+&lt;/xs:schema&gt;</code></pre><h2>HTTP status code <a href="http://httpstatus.es/416" target="_blank">416</a></h2><p>Requested Range Not Satisfiable, see error code on <a href="http://docs.aws.amazon.com/AmazonS3/latest/API/ErrorResponses.html">http://docs.aws.amazon.com/AmazonS3/latest/API/ErrorResponses.html</a></p><h3>Headers</h3><ul><li><strong>Content-Length</strong>: <em>(string)</em><p>The length in bytes of the body in the response.</p></li><li><strong>Connection</strong>: <em>(one of open, close)</em><p>specifies whether the connection to the server is open or closed.</p></li><li><strong>Date</strong>: <em>(string)</em><p>The date and time Amazon S3 responded, for example, Wed, 01 Mar 2009 12:00:00 GMT.</p></li><li><strong>ETag</strong>: <em>(string)</em><p>The entity tag is a hash of the object. The ETag only reflects changes to the contents of an object, not its metadata. The ETag is determined when an object is created. For objects created by the PUT Object operation and the POST Object operation, the ETag is a quoted, 32-digit hexadecimal string representing the MD5 digest of the object data. For other objects, the ETag may or may not be an MD5 digest of the object data. If the ETag is not an MD5 digest of the object data, it will contain one or more non-hexadecimal characters and/or will consis of less than 32 or more than 32 hexadecimal digits.</p></li><li><strong>Server</strong>: <em>(string - default: AmazonS3)</em><p>The name of the server that created the response</p></li><li><strong>x-amz-delete-marker</strong>: <em>(boolean)</em><p>Specifies whether the object returned was (true) or was not (false) a Delete Marker.</p></li><li><strong>x-amz-id-2</strong>: <em>(string)</em><p>A special token that helps AWS troubleshoot problems.</p></li><li><strong>x-amz-request-id</strong>: <em>(string)</em><p>A value created by Amazon S3 that uniquely identifies the request. In the unlikely event that you have problems with Amazon S3, AWS can use this value to troubleshoot the problem.</p></li><li><strong>x-amz-version-id</strong>: <em>(string)</em><p>The version of the object. When you enable versioning, Amazon S3 generates a random number for objects added to a bucket. The value is UTF-8 encoded and URL ready. When you PUT an object in a bucket where versioning has been suspended, the version ID is always null.</p></li></ul><h3>Body</h3><p><strong>Type: application/xml</strong></p><p><strong>Schema</strong>:</p><pre><code>&lt;xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;xs:element name="Error"&gt;
+    &lt;xs:complexType&gt;
+      &lt;xs:sequence&gt;
+        &lt;xs:element type="xs:string" name="Code"/&gt;
+        &lt;xs:element type="xs:string" name="Message"/&gt;
+        &lt;xs:element type="xs:string" name="Resource"/&gt;
+        &lt;xs:element type="xs:string" name="RequestId"/&gt;
+      &lt;/xs:sequence&gt;
+    &lt;/xs:complexType&gt;
+  &lt;/xs:element&gt;
+&lt;/xs:schema&gt;</code></pre><h2>HTTP status code <a href="http://httpstatus.es/500" target="_blank">500</a></h2><p>Internal Server Error, see error code on <a href="http://docs.aws.amazon.com/AmazonS3/latest/API/ErrorResponses.html">http://docs.aws.amazon.com/AmazonS3/latest/API/ErrorResponses.html</a></p><h3>Headers</h3><ul><li><strong>Content-Length</strong>: <em>(string)</em><p>The length in bytes of the body in the response.</p></li><li><strong>Connection</strong>: <em>(one of open, close)</em><p>specifies whether the connection to the server is open or closed.</p></li><li><strong>Date</strong>: <em>(string)</em><p>The date and time Amazon S3 responded, for example, Wed, 01 Mar 2009 12:00:00 GMT.</p></li><li><strong>ETag</strong>: <em>(string)</em><p>The entity tag is a hash of the object. The ETag only reflects changes to the contents of an object, not its metadata. The ETag is determined when an object is created. For objects created by the PUT Object operation and the POST Object operation, the ETag is a quoted, 32-digit hexadecimal string representing the MD5 digest of the object data. For other objects, the ETag may or may not be an MD5 digest of the object data. If the ETag is not an MD5 digest of the object data, it will contain one or more non-hexadecimal characters and/or will consis of less than 32 or more than 32 hexadecimal digits.</p></li><li><strong>Server</strong>: <em>(string - default: AmazonS3)</em><p>The name of the server that created the response</p></li><li><strong>x-amz-delete-marker</strong>: <em>(boolean)</em><p>Specifies whether the object returned was (true) or was not (false) a Delete Marker.</p></li><li><strong>x-amz-id-2</strong>: <em>(string)</em><p>A special token that helps AWS troubleshoot problems.</p></li><li><strong>x-amz-request-id</strong>: <em>(string)</em><p>A value created by Amazon S3 that uniquely identifies the request. In the unlikely event that you have problems with Amazon S3, AWS can use this value to troubleshoot the problem.</p></li><li><strong>x-amz-version-id</strong>: <em>(string)</em><p>The version of the object. When you enable versioning, Amazon S3 generates a random number for objects added to a bucket. The value is UTF-8 encoded and URL ready. When you PUT an object in a bucket where versioning has been suspended, the version ID is always null.</p></li></ul><h3>Body</h3><p><strong>Type: application/xml</strong></p><p><strong>Schema</strong>:</p><pre><code>&lt;xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;xs:element name="Error"&gt;
+    &lt;xs:complexType&gt;
+      &lt;xs:sequence&gt;
+        &lt;xs:element type="xs:string" name="Code"/&gt;
+        &lt;xs:element type="xs:string" name="Message"/&gt;
+        &lt;xs:element type="xs:string" name="Resource"/&gt;
+        &lt;xs:element type="xs:string" name="RequestId"/&gt;
+      &lt;/xs:sequence&gt;
+    &lt;/xs:complexType&gt;
+  &lt;/xs:element&gt;
+&lt;/xs:schema&gt;</code></pre><h2>HTTP status code <a href="http://httpstatus.es/501" target="_blank">501</a></h2><p>Not Implemented, see error code on <a href="http://docs.aws.amazon.com/AmazonS3/latest/API/ErrorResponses.html">http://docs.aws.amazon.com/AmazonS3/latest/API/ErrorResponses.html</a></p><h3>Headers</h3><ul><li><strong>Content-Length</strong>: <em>(string)</em><p>The length in bytes of the body in the response.</p></li><li><strong>Connection</strong>: <em>(one of open, close)</em><p>specifies whether the connection to the server is open or closed.</p></li><li><strong>Date</strong>: <em>(string)</em><p>The date and time Amazon S3 responded, for example, Wed, 01 Mar 2009 12:00:00 GMT.</p></li><li><strong>ETag</strong>: <em>(string)</em><p>The entity tag is a hash of the object. The ETag only reflects changes to the contents of an object, not its metadata. The ETag is determined when an object is created. For objects created by the PUT Object operation and the POST Object operation, the ETag is a quoted, 32-digit hexadecimal string representing the MD5 digest of the object data. For other objects, the ETag may or may not be an MD5 digest of the object data. If the ETag is not an MD5 digest of the object data, it will contain one or more non-hexadecimal characters and/or will consis of less than 32 or more than 32 hexadecimal digits.</p></li><li><strong>Server</strong>: <em>(string - default: AmazonS3)</em><p>The name of the server that created the response</p></li><li><strong>x-amz-delete-marker</strong>: <em>(boolean)</em><p>Specifies whether the object returned was (true) or was not (false) a Delete Marker.</p></li><li><strong>x-amz-id-2</strong>: <em>(string)</em><p>A special token that helps AWS troubleshoot problems.</p></li><li><strong>x-amz-request-id</strong>: <em>(string)</em><p>A value created by Amazon S3 that uniquely identifies the request. In the unlikely event that you have problems with Amazon S3, AWS can use this value to troubleshoot the problem.</p></li><li><strong>x-amz-version-id</strong>: <em>(string)</em><p>The version of the object. When you enable versioning, Amazon S3 generates a random number for objects added to a bucket. The value is UTF-8 encoded and URL ready. When you PUT an object in a bucket where versioning has been suspended, the version ID is always null.</p></li></ul><h3>Body</h3><p><strong>Type: application/xml</strong></p><p><strong>Schema</strong>:</p><pre><code>&lt;xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;xs:element name="Error"&gt;
+    &lt;xs:complexType&gt;
+      &lt;xs:sequence&gt;
+        &lt;xs:element type="xs:string" name="Code"/&gt;
+        &lt;xs:element type="xs:string" name="Message"/&gt;
+        &lt;xs:element type="xs:string" name="Resource"/&gt;
+        &lt;xs:element type="xs:string" name="RequestId"/&gt;
+      &lt;/xs:sequence&gt;
+    &lt;/xs:complexType&gt;
+  &lt;/xs:element&gt;
+&lt;/xs:schema&gt;</code></pre><h2>HTTP status code <a href="http://httpstatus.es/503" target="_blank">503</a></h2><p>Service Unavailable, see error code on <a href="http://docs.aws.amazon.com/AmazonS3/latest/API/ErrorResponses.html">http://docs.aws.amazon.com/AmazonS3/latest/API/ErrorResponses.html</a></p><h3>Headers</h3><ul><li><strong>Content-Length</strong>: <em>(string)</em><p>The length in bytes of the body in the response.</p></li><li><strong>Connection</strong>: <em>(one of open, close)</em><p>specifies whether the connection to the server is open or closed.</p></li><li><strong>Date</strong>: <em>(string)</em><p>The date and time Amazon S3 responded, for example, Wed, 01 Mar 2009 12:00:00 GMT.</p></li><li><strong>ETag</strong>: <em>(string)</em><p>The entity tag is a hash of the object. The ETag only reflects changes to the contents of an object, not its metadata. The ETag is determined when an object is created. For objects created by the PUT Object operation and the POST Object operation, the ETag is a quoted, 32-digit hexadecimal string representing the MD5 digest of the object data. For other objects, the ETag may or may not be an MD5 digest of the object data. If the ETag is not an MD5 digest of the object data, it will contain one or more non-hexadecimal characters and/or will consis of less than 32 or more than 32 hexadecimal digits.</p></li><li><strong>Server</strong>: <em>(string - default: AmazonS3)</em><p>The name of the server that created the response</p></li><li><strong>x-amz-delete-marker</strong>: <em>(boolean)</em><p>Specifies whether the object returned was (true) or was not (false) a Delete Marker.</p></li><li><strong>x-amz-id-2</strong>: <em>(string)</em><p>A special token that helps AWS troubleshoot problems.</p></li><li><strong>x-amz-request-id</strong>: <em>(string)</em><p>A value created by Amazon S3 that uniquely identifies the request. In the unlikely event that you have problems with Amazon S3, AWS can use this value to troubleshoot the problem.</p></li><li><strong>x-amz-version-id</strong>: <em>(string)</em><p>The version of the object. When you enable versioning, Amazon S3 generates a random number for objects added to a bucket. The value is UTF-8 encoded and URL ready. When you PUT an object in a bucket where versioning has been suspended, the version ID is always null.</p></li></ul><h3>Body</h3><p><strong>Type: application/xml</strong></p><p><strong>Schema</strong>:</p><pre><code>&lt;xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;xs:element name="Error"&gt;
+    &lt;xs:complexType&gt;
+      &lt;xs:sequence&gt;
+        &lt;xs:element type="xs:string" name="Code"/&gt;
+        &lt;xs:element type="xs:string" name="Message"/&gt;
+        &lt;xs:element type="xs:string" name="Resource"/&gt;
+        &lt;xs:element type="xs:string" name="RequestId"/&gt;
+      &lt;/xs:sequence&gt;
+    &lt;/xs:complexType&gt;
+  &lt;/xs:element&gt;
+&lt;/xs:schema&gt;</code></pre></div></div></div></div></div></div></div></div></div></div></div><div class="col-md-3"><div id="sidebar" class="hidden-print affix" role="complementary"><ul class="nav nav-pills nav-stacked"><li><a href="#">GET Service</a></li></ul></div></div></div></div></body></html>
