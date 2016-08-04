@@ -8,7 +8,7 @@
   * Shapeless is a type class and dependent type based generic programming library for Scala.
 2. [Scala School](https://twitter.github.io/scala_school/)
 3. [Scala-Exercism](http://exercism.io/languages/scala)
-4. 
+4. [LightBend - Resources/Ebooks](https://www.lightbend.com/resources/e-books)
 
 ## Coursera
 1. [Functional Programming Principals in Scala](https://www.coursera.org/learn/progfun1)
