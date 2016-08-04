@@ -6,7 +6,7 @@
   * Scala fuses object-oriented and functional programming in a statically typed programming language.
   * Cats is a library which provides abstractions for functional programming in the Scala programming language.
   * Shapeless is a type class and dependent type based generic programming library for Scala.
-2. [Scala School](https://twitter.github.io/scala_school/)
+2. [Twitter's Scala School](https://twitter.github.io/scala_school/)
 3. [Scala-Exercism](http://exercism.io/languages/scala)
 4. [LightBend - Resources/Ebooks](https://www.lightbend.com/resources/e-books)
 
